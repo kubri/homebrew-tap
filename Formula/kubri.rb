@@ -5,21 +5,21 @@
 class Kubri < Formula
   desc "Kubri signs and releases software for common package managers and software update frameworks."
   homepage "https://kubri.dev/"
-  version "0.5.2"
+  version "0.6.0"
   license "MIT"
 
   on_macos do
-    on_intel do
-      url "https://github.com/kubri/kubri/releases/download/v0.5.2/kubri_0.5.2_MacOS_x86_64.tar.gz"
-      sha256 "1ba622cd889ca0282bf58f88358c657303a97905303835e7e6c164a3e583e449"
+    if Hardware::CPU.intel?
+      url "https://github.com/kubri/kubri/releases/download/v0.6.0/kubri_0.6.0_MacOS_x86_64.tar.gz"
+      sha256 "2d581614761328aa055f02d036040c531dd9e222859e413172fd8b2ce9332579"
 
       def install
         bin.install "kubri"
       end
     end
-    on_arm do
-      url "https://github.com/kubri/kubri/releases/download/v0.5.2/kubri_0.5.2_MacOS_arm64.tar.gz"
-      sha256 "850cde0a6b226970d05ce85c764d93ebbcb3b119ead771169a031302a377e29f"
+    if Hardware::CPU.arm?
+      url "https://github.com/kubri/kubri/releases/download/v0.6.0/kubri_0.6.0_MacOS_arm64.tar.gz"
+      sha256 "4f60245c52613b34a1d072fdc962bf446b90ecb3860f01fd181a918b4f527f4d"
 
       def install
         bin.install "kubri"
@@ -28,30 +28,30 @@ class Kubri < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/kubri/kubri/releases/download/v0.5.2/kubri_0.5.2_Linux_x86_64.tar.gz"
-        sha256 "3ee52d36629a803672bb849c42c4ae5c0daa315abe219a66474291eb2c5f257a"
+        url "https://github.com/kubri/kubri/releases/download/v0.6.0/kubri_0.6.0_Linux_x86_64.tar.gz"
+        sha256 "978d32aafe92cb0ca3f76b0fd1a915d9b3ea6c8a640e0c0b35240066d709e01c"
 
         def install
           bin.install "kubri"
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if !Hardware::CPU.is_64_bit?
-        url "https://github.com/kubri/kubri/releases/download/v0.5.2/kubri_0.5.2_Linux_armv6.tar.gz"
-        sha256 "c0d13d28ac70a95c17e05fe290147603edec1b6f9ec11457839f992cf5cd9627"
+        url "https://github.com/kubri/kubri/releases/download/v0.6.0/kubri_0.6.0_Linux_armv6.tar.gz"
+        sha256 "b0a75a33f257018bdc8ea586d23201931cddc89f01b004604fb8893ea4955cd4"
 
         def install
           bin.install "kubri"
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/kubri/kubri/releases/download/v0.5.2/kubri_0.5.2_Linux_arm64.tar.gz"
-        sha256 "3ff55ef40f1dd01ef7df836339723ab8009b4ae2c5fdb9a6086634335ee12fed"
+        url "https://github.com/kubri/kubri/releases/download/v0.6.0/kubri_0.6.0_Linux_arm64.tar.gz"
+        sha256 "bb786199b5d8912be97194fa582deb567124ec2c4134cf04b059dc40835a0b3a"
 
         def install
           bin.install "kubri"
