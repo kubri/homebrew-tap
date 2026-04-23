@@ -1,7 +1,7 @@
 # homebrew-tap
 
-Homebrew Formulae for Kubri.
+Homebrew Cask for Kubri.
 
 ```sh
-brew install kubri/tap/kubri
+brew install --cask kubri/tap/kubri
 ```
